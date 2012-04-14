@@ -1,0 +1,8 @@
+org.xwiki.pagecreation.internal.PageCreationScriptService
+org.xwiki.pagecreation.internal.CleanupInputTransformer
+org.xwiki.pagecreation.internal.LowercaseInputTransformer
+org.xwiki.pagecreation.internal.UppercaseInputTransformer
+org.xwiki.pagecreation.internal.CamelCaseWhitespaceHandler
+org.xwiki.pagecreation.internal.HyphenizeWhitespaceHandler
+org.xwiki.pagecreation.internal.SnakeCaseWhitespaceHandler
+org.xwiki.pagecreation.internal.NoopWhitespaceHandler

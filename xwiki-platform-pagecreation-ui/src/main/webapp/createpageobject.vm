@@ -1,0 +1,72 @@
+#set($toCreateClassDocument = $xwiki.getDocument($request.tocreate))
+#if("$!request.xaction" == 'preview')
+  #set($futurePageName = $services.pageCreation.computeName($toCreateClassDocument.documentReference, $request.parameterMap))
+  #set($rsp = {})
+  #set($ok = $rsp.put('name', $futurePageName))
+  $response.setContentType('application/json')
+  $jsontool.serialize($rsp)
+#elseif("$!request.xaction" == 'create')
+  #set($futurePageName = $services.pageCreation.computeName($toCreateClassDocument.documentReference, $request.parameterMap))
+  #set($targetFullName = "${doc.space}.${futurePageName}")
+  #set($resultCreation = $services.pageCreation.create($toCreateClassDocument.documentReference, $request.parameterMap))
+  #set($status = $resultCreation.get(0))
+  #if($status == 'OK')
+    #set($redirectTo = $resultCreation.get(1))
+    $response.sendRedirect($redirectTo)
+  #else
+    #set($errorMessage = $resultCreation.get(1))
+  #end
+#else
+  #set($ok = $xwiki.jsx.use('XWiki.PageCreation')) ## FIXME will work only when viewable
+  #set($ok = $xwiki.ssx.use('XWiki.PageCreation')) ## FIXME will work only when viewable
+  #set($pageCreationObject = $toCreateClassDocument.getObject('XWiki.PageCreation'))
+  #set($arguments = $pageCreationObject.getProperty('arguments').value)
+  #set($fieldsToDisplay = [])
+  #foreach($argument in $arguments.split("\n"))
+    #if($argument.startsWith('document:') || $argument.startsWith('property:'))
+      #set($ok = $fieldsToDisplay.add($argument))
+    #end
+  #end
+  #set($fakeDoc = $xwiki.getDocument("fakedoc"))
+  #set($ok = $fakeDoc.getObject($toCreateClassDocument.fullName, true))
+  <form action="" class="xform half pageCreation">
+    <fieldset>
+      <input type="hidden" name="tocreate" value="$!request.tocreate" />
+      <input type="hidden" name="xaction" value="create" /> 
+      <input type="hidden" name="parent" value="${doc.fullName}" />
+      <dl>
+      #foreach($field in $fieldsToDisplay)
+        #if($field == 'document:title')
+          <dt>
+            <label>$msg.get('titlefield')</label>
+          </dt>
+          <dd>
+            <input type=text name="title" value="Title..." class="withTip" />
+          </dd>
+        #elseif($field.startsWith('property:'))
+          #set($propertyName = $field.substring(9))
+          <dt>
+            <label>
+            $toCreateClassDocument.xWikiClass.get($propertyName).prettyName
+            </label>
+            #set($hintMessageKey = "${toCreateClassDocument}_${propertyName}.hint")
+            #if($msg.get($hintMessageKey) != $hintMessageKey)
+            <span class="xHint">$msg.get($hintMessageKey)</span>
+            #end
+          </dt>
+          <dd>
+          $fakeDoc.display($propertyName, "edit")
+          </dd>
+        #end
+      #end
+      </dl>
+      <dl class="permalink hidden">
+        <dt>Permalink of this page will be :</dt>
+        <dd></dd>
+      </dl>
+      <div class="buttons form-actions">
+        <input type="submit" class="button" value="$msg.get('create')" />
+      </div>
+    </fieldset>
+  </form>
+#end

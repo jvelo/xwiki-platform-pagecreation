@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xwikidoc>
+<web>XWiki</web>
+<name>PageCreation</name>
+<language></language>
+<defaultLanguage></defaultLanguage>
+<translation>0</translation>
+<parent>XWiki.WebHome</parent>
+<creator>xwiki:XWiki.Admin</creator>
+<author>xwiki:XWiki.Admin</author>
+<customClass></customClass>
+<contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+<creationDate>1334259382000</creationDate>
+<date>1334340381000</date>
+<contentUpdateDate>1334340381000</contentUpdateDate>
+<version>1.1</version>
+<title>Page creation XClass</title>
+<template></template>
+<defaultTemplate></defaultTemplate>
+<validationScript></validationScript>
+<comment></comment>
+<minorEdit>false</minorEdit>
+<syntaxId>xwiki/2.1</syntaxId>
+<hidden>true</hidden>
+<class>
+<name>XWiki.PageCreation</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<arguments>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<editor>---</editor>
+<name>arguments</name>
+<number>3</number>
+<picker>0</picker>
+<prettyName>Arguments passed to format strings</prettyName>
+<rows>5</rows>
+<size>40</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</arguments>
+<nameFormat>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>nameFormat</name>
+<number>1</number>
+<picker>0</picker>
+<prettyName>Format for the name of documents</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</nameFormat>
+<nameTransformations>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>1</multiSelect>
+<name>nameTransformations</name>
+<number>5</number>
+<picker>0</picker>
+<prettyName>Transformations to apply for page name</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>5</size>
+<sort>none</sort>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>cleanup=Cleanup non-word chars|lowercase=Lowercase|uppercase=Uppercase</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</nameTransformations>
+<nameWhitespaceStrategy>
+<cache>0</cache>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>nameWhitespaceStrategy</name>
+<number>4</number>
+<picker>0</picker>
+<prettyName>Strategy for whitespace in page name</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<sort>none</sort>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<values>none=None|hyphenize=Hyphenize|snake_case=Snake Case|camelCase=Camel Case</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</nameWhitespaceStrategy>
+<titleFormat>
+<customDisplay></customDisplay>
+<disabled>0</disabled>
+<name>titleFormat</name>
+<number>2</number>
+<picker>0</picker>
+<prettyName>Format for the title of documents</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<validationMessage></validationMessage>
+<validationRegExp></validationRegExp>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</titleFormat>
+</class>
+<object>
+<class>
+<name>XWiki.JavaScriptExtension</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<cache>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>cache</name>
+<number>5</number>
+<prettyName>Caching policy</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>long|short|default|forbid</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</cache>
+<code>
+<disabled>0</disabled>
+<name>code</name>
+<number>2</number>
+<prettyName>Code</prettyName>
+<rows>20</rows>
+<size>50</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</code>
+<name>
+<disabled>0</disabled>
+<name>name</name>
+<number>1</number>
+<prettyName>Name</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</name>
+<parse>
+<disabled>0</disabled>
+<displayFormType>select</displayFormType>
+<displayType>yesno</displayType>
+<name>parse</name>
+<number>4</number>
+<prettyName>Parse content</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</parse>
+<use>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>use</name>
+<number>3</number>
+<prettyName>Use this extension</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</use>
+</class>
+<name>XWiki.PageCreation</name>
+<number>1</number>
+<className>XWiki.JavaScriptExtension</className>
+<guid>bfce9d3a-741f-40e6-baa6-1b4de8e4e780</guid>
+<property>
+<cache>long</cache>
+</property>
+<property>
+<code>var XWiki = (function(XWiki){
+
+  XWiki.PageCreator = Class.create({
+
+    initialize: function(element) {
+      this.permalinkHolder = element.down("dl.permalink dd");
+      this.form = element.down("form.pageCreation");
+      if (this.permalinkHolder) {
+        var triggerPreview = this.triggerPreview.bindAsEventListener(this);
+        this.inputs = this.form.select("input", "select", "textarea");
+        this.inputs.each(function(input){
+          ['keyup', 'paste', 'cut'].each(function(eventType) {
+            input.observe(eventType, triggerPreview);
+          }.bind(this));
+        });
+        var placeHolder = new XWiki.Document("__PLACEHOLDER__", XWiki.currentDocument.space).getURL('view');
+        placeHolder = placeHolder.replace(/__PLACEHOLDER__/, "&lt;span class='name'&gt;&lt;/span&gt;");
+        this.permalinkHolder.insert(placeHolder);
+        this.permalinkHolder.up('dl').removeClassName('hidden');
+        this.triggerPreview();
+      }
+    },
+
+    triggerPreview: function(event) {
+      var url = XWiki.currentDocument.getURL('get', this.form.serialize().replace(/xaction=create/, "xaction=preview") + "&amp;xpage=createpageobject");
+      var ajx = new Ajax.Request(url, {
+        onComplete: this.onPreviewAvailable.bind(this)
+      });
+    },
+
+    onPreviewAvailable: function(transport) {
+      var result = transport.responseJSON;
+      this.permalinkHolder.down("span.name").update(result.name);
+    }
+
+  });
+
+  return XWiki;
+
+})(XWiki || {});
+
+document.observe("dom:loaded", function(){
+  new XWiki.PageCreator($('mainContentArea'));
+});
+
+document.observe("xwiki:popup:loaded", function(){
+  new XWiki.PageCreator($('popupContent'));
+});</code>
+</property>
+<property>
+<name></name>
+</property>
+<property>
+<parse>0</parse>
+</property>
+<property>
+<use>onDemand</use>
+</property>
+</object>
+<object>
+<class>
+<name>XWiki.StyleSheetExtension</name>
+<customClass></customClass>
+<customMapping></customMapping>
+<defaultViewSheet></defaultViewSheet>
+<defaultEditSheet></defaultEditSheet>
+<defaultWeb></defaultWeb>
+<nameField></nameField>
+<validationScript></validationScript>
+<cache>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>cache</name>
+<number>5</number>
+<prettyName>Caching policy</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>long|short|default|forbid</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</cache>
+<code>
+<disabled>0</disabled>
+<name>code</name>
+<number>2</number>
+<prettyName>Code</prettyName>
+<rows>20</rows>
+<size>50</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.TextAreaClass</classType>
+</code>
+<name>
+<disabled>0</disabled>
+<name>name</name>
+<number>1</number>
+<prettyName>Name</prettyName>
+<size>30</size>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.StringClass</classType>
+</name>
+<parse>
+<disabled>0</disabled>
+<displayFormType>select</displayFormType>
+<displayType>yesno</displayType>
+<name>parse</name>
+<number>4</number>
+<prettyName>Parse content</prettyName>
+<unmodifiable>0</unmodifiable>
+<classType>com.xpn.xwiki.objects.classes.BooleanClass</classType>
+</parse>
+<use>
+<cache>0</cache>
+<disabled>0</disabled>
+<displayType>select</displayType>
+<multiSelect>0</multiSelect>
+<name>use</name>
+<number>3</number>
+<prettyName>Use this extension</prettyName>
+<relationalStorage>0</relationalStorage>
+<separator> </separator>
+<separators> ,|</separators>
+<size>1</size>
+<unmodifiable>0</unmodifiable>
+<values>currentPage=Always on this page|onDemand=On demand|always=Always on this wiki</values>
+<classType>com.xpn.xwiki.objects.classes.StaticListClass</classType>
+</use>
+</class>
+<name>XWiki.PageCreation</name>
+<number>0</number>
+<className>XWiki.StyleSheetExtension</className>
+<guid>b998f046-1175-48df-9e21-ee3b642f8e77</guid>
+<property>
+<cache>long</cache>
+</property>
+<property>
+<code>.permalink .name {
+  font-weight:bold;
+}</code>
+</property>
+<property>
+<name></name>
+</property>
+<property>
+<parse></parse>
+</property>
+<property>
+<use>onDemand</use>
+</property>
+</object>
+<content></content></xwikidoc>
